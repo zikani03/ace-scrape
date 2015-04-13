@@ -1,0 +1,6 @@
+{
+    "title" : "ACE Scrape data API",
+    "description": "Data API for Rural commodity exchange markets and current contracts at <a href=\"http://aceafrica.org\">ACE Africa</a>",
+    "sampleUrl" :"http://localhost:4567",
+    "author" : "Zikani Nyirenda Mwase"
+}

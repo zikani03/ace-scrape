@@ -1,0 +1,17 @@
+body {
+  font-family: 'Comfortaa', 'Open Sans Condensed', 'Yanone Kaffeesatz', cursive, sans-serif;
+}
+
+.market-icon {
+    color: #eee;
+    font-size: 3em;
+}
+.market-item .panel-heading {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #85B899;
+}
+
+.market-name a {
+    color: #fff;
+}

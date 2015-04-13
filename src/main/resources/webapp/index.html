@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html lang="en-US" ng-app="aceScrape">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Author" value="Zikani Nyirenda Mwase">
+	<title>Ace Scrape</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Yanone+Kaffeesatz|Comfortaa' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="lib/bootstrap-css/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/lodash/lodash.min.js"></script>
+    
+        <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angular-route/angular-route.min.js"></script>
+    
+    <script type="text/javascript" src="lib/restangular/dist/restangular.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-css/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+    <div class="container">        
+        <div class="panel panel-info">
+            <div class="panel-body">
+                
+                <div class="pull-left">
+                    <img src="http://aceafrica.org/images/logo.jpg" alt="Ace Logo"/>
+                </div>
+                This information has been scraped from <a href="http://www.aceafrica.org/market-info/rural-markets.aspx">ACE</a> and made accessible as JSON data over a RESTful API.<br/>
+                
+                <br/>
+                
+                The raw JSON data can be viewed <a href="/markets">here for markets</a> and  <a href="/contracts">here for contracts</a>
+            </div>
+            <div class="panel-footer warning">
+                "ACE is generating real time market information from these bids/offers and contracts generated. This information is public and available to all."
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <ul class="nav nav-list">
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/markets">Markets</a></li>
+                <li><a href="#/contracts">Contracts</a></li>
+            </ul>
+            <h5>Links</h5>
+            <ul class="nav nav-list">
+                <li><a href="http://aceafrica.org">Ace Africa</a></li>
+                <li><a href="http://github.com/zikani03/ace-scrape">Source Code</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div ng-view></div>
+        </div>
+        
+        
+        <script type="text/ng-template" id="markets.list.html">     
+            <h1>Rural Commodity Exchange Markets</h1>
+            <hr/>
+            
+            <div ng-repeat="market in markets">
+                <div class="market-item panel panel-default">
+                    <div class="panel-heading">
+                      <span class="h3 market-name"> 
+                        Market: <a href="#/markets/{{market.marketName}}">{{market.marketName}}</a>
+                      </span>                        
+                    </div>
+                	<div class="panel-body">
+                        <div class="market-item">
+                            <div class="market-icon pull-right">
+                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                            </div>
+                            
+                          
+                          <div class="location">
+                              <div class="pull-left">
+                                <span class="h2">
+                                    <i class="glyphicon glyphicon-map-marker"></i>
+                                </span>
+                                <span class="h3">
+                                    District:&nbsp;<a href="#/{{market.district}}" class="district">{{market.district}}<!--{{market.region}}--></a>
+                                </span>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                          <div class="contacts">
+                            <strong>Contact</strong>
+                            <i class="icon glyphicon glyphicon-phone"></i>&nbsp;
+                            <span class="agent">{{market.tradeAgent}}</span>
+                            <span class="number">+{{market.contactNumber}}</span>
+                          </div>
+                          
+
+                        </div>	                        
+                    </div>
+                </div>
+            </div>	
+        </script>
+        
+        <script type="text/ng-template" id="markets.detail.html">        
+            <div class="market-item panel panel-default">
+                    <div class="panel-heading">
+                    <span class="h3 market-name"> 
+                            Market: <a href="#/markets/{{market.marketName}}">{{market.marketName}}</a>
+                    </span>                        
+                    </div>
+                	<div class="panel-body">
+                        <div class="market-item">
+                            <div class="market-icon pull-right">
+                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                            </div>
+                            
+                          
+                          <div class="location">
+                              <div class="pull-left">
+                                <span class="h2">
+                                    <i class="glyphicon glyphicon-map-marker"></i>
+                                </span>
+                                <span class="h3">
+                                    District:&nbsp;<a href="#/districts/{{market.district}}" class="district">{{market.district}}<!--{{market.region}}--></a>
+                                </span>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                          <div class="contacts">
+                            <strong>Contact</strong>
+                            <i class="icon glyphicon glyphicon-phone"></i>&nbsp;
+                            <span class="agent">{{market.tradeAgent}}</span>
+                            <span class="number">+{{market.contactNumber}}</span>
+                          </div>
+                        </div>	
+                        <hr/>
+                        <h4>Commodities Available</h4>
+                        <h3>Coming soon...</h3>
+                    </div>
+                </div>
+        </script>
+        
+        
+        <script type="text/ng-template" id="contracts.list.html">        
+            <h1>All Contracts</h1>
+            <h2>@TODO</h2>
+        </script>
+        
+        <script type="text/ng-template" id="contracts.detail.html">        
+            <span>Contract Details</span>
+            <h2>@TODO</h2>
+        </script>
+        
+         <span>Ace Scrape by <a href="https://github.com/zikani03">zikani03</a></span>
+    </div>
+</body>
+</html>
