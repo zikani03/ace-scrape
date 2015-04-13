@@ -4,7 +4,7 @@ A project to provide the rural commodity exchange market data and contracts data
 
 The API uses JSON for exchanging the market data.
 
->NB: The data from the website is obtained by [web scraping](https://en.wikipedia.org/wiki/Web_scraping) - which should be okay, since the data is in the public domain according to info on [this page](http://aceafrica.org/about-ace.aspxhttp://aceafrica.org/about-ace.aspx)
+>NB: The data from the website is obtained by [web scraping](https://en.wikipedia.org/wiki/Web_scraping) - which should be okay, since the data is in the public domain according to info on [this page](http://aceafrica.org/about-ace.aspx)
 
 >[quote] "ACE is generating real time market information from these bids/offers and contracts generated. This information is public and available to all.." [/quote]
 
@@ -21,15 +21,17 @@ Stuff you need to have installed for this to work
 
 Install requirements, clone this repository locally, generate the api doc and execute the maven project. 
 
+Clone this repo
+```
+$ git clone https://github.com/zikani03/ace-scrape.git
+```
+
 Install apidoc, bower
 ```
 $ cd ace-scrape
 $ npm install -g apidoc bower
 ```
-Clone this repo
-```
-$ git clone https://github.com/zikani03/ace-scrape.git
-```
+
 Generate the apidoc for the resources
 ```
 $ apidoc --input ./src/main/java --output ./src/main/resources/webapp/apidoc -f .java
