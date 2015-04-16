@@ -5,16 +5,12 @@ import org.slf4j.LoggerFactory;
 
 import spark.Spark;
 import io.github.zikani03.acescrape.Controller;
-import io.github.zikani03.acescrape.client.AbstractHttpClient;
-import io.github.zikani03.acescrape.client.Client;
 import io.github.zikani03.acescrape.data.MarketCollection;
 import io.github.zikani03.acescrape.parser.Parser;
 import io.github.zikani03.acescrape.util.JsonTransformer;
 
 public class MarketsResource implements Controller {
-	protected final AbstractHttpClient<MarketCollection> client = new Client<MarketCollection>();
 	private final String dataUrl;
-	//private final String MARKETS_URL = "http://localhost/ace-data/market_info.htm";
 	private final Parser<MarketCollection> parser;
 	
 	private MarketCollection marketCollection;
